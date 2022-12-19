@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void configUserName(){
         MaterialButton btnSave = (MaterialButton) findViewById(R.id.btnSave);
-        btnSave.setOnClickListener(v -> Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show());
+        btnSave.setOnClickListener(v -> Toast.makeText(MainActivity.this, getDetails(), Toast.LENGTH_SHORT).show());
     }
 
     CharSequence getDetails(){
