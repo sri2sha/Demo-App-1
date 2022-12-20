@@ -6,80 +6,154 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/blue_700"
         tools:context=".MainActivity">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTitle"
+            android:text="@string/my_employee"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
             android:id="@+id/mcv"
-            app:cardCornerRadius="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/login_bg"
+            app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
             app:cardMaxElevation="4dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@android:color/holo_blue_bright"
-            android:layout_height="wrap_content"
+            app:strokeColor="@color/yellow"
+            app:strokeWidth="2dp"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tilUserName"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="20dp"
-                android:hint="@string/username"
-                app:hintTextColor="@color/white"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/etUserName">
-
-                </com.google.android.material.textfield.TextInputEditText>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tilEmployeeId"
-                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:hint="@string/employeeId"
-                    app:hintTextColor="@color/white"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/tilUserName">
+                    android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.filled"
+                    app:boxStrokeColor="@color/yellow"
+                    app:boxBackgroundColor="@color/white_80"
+                    app:boxBackgroundMode="filled"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUserName"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:inputType="number"
-                        android:id="@+id/etEmployeeId">
+                        android:textCursorDrawable="@null"
+                        android:hint="@string/username"
+                        android:layout_height="50dp">
 
                     </com.google.android.material.textfield.TextInputEditText>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnSave"
-                android:text="@string/save"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/teal_700"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilEmployeeId"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmployeeId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.filled"
+                    app:boxStrokeColor="@color/yellow"
+                    app:boxBackgroundColor="@color/white_80"
+                    app:boxBackgroundMode="filled"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilUserName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmployeeId"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/employeeId"
+                        android:inputType="number">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnInsertNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/insert_new_data"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/blue_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilEmployeeId" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/update"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/blue_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnInsertNew" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDeleteExisting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/delete_existing_data"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/blue_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnUpdate" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/view_data"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/blue_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnDeleteExisting" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/btnView"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -90,4 +164,4 @@
 </layout>
 
 
-<!-- -->
+    <!-- -->
