@@ -1,13 +1,18 @@
 package com.example.dempapp1;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.dempapp1.recyclerview.EmployeeModelData;
+import com.example.dempapp1.sqlite.DBHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
 
 import java.util.Objects;
 
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String employeeNameTXT = Objects.requireNonNull(employeeName.getText()).toString();
-                String employeeIdTXT = Objects.requireNonNull(employeeId.getText()).toString();
+                String employeeIdTXT = Objects.requireNonNull(Objects.requireNonNull(employeeId.getText()).toString());
 
                 Boolean checkUpdateData = DB.updateEmployeeData(employeeNameTXT,employeeIdTXT);
                 if (checkUpdateData){
@@ -65,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
         btnDeleteExisting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String employeeNameTXT = Objects.requireNonNull(Objects.requireNonNull(employeeName.getText()).toString());
+                String employeeIdTXT = Objects.requireNonNull(Objects.requireNonNull(employeeId.getText()).toString());
 
-                Boolean checkDeleteData = DB.deleteEmployeeData(employeeNameTXT);
+                Boolean checkDeleteData = DB.deleteEmployeeData(employeeIdTXT);
                 if (checkDeleteData){
                     Toast.makeText(MainActivity.this, "Employee Deleted", Toast.LENGTH_SHORT).show();
                 } else {
@@ -94,9 +99,24 @@ public class MainActivity extends AppCompatActivity {
                 builder.setTitle("Employee Entries");
                 builder.setMessage(buffer.toString());
                 builder.show();
+
+
+                Intent intent = new Intent(getApplicationContext(), RecyclerViewActivity.class);
+                //intent.putExtra("Employee",toJson());
+                startActivity(intent);
             }
         });
     }
+
+    /*public EmployeeModelData model(){
+
+    }*/
+
+    public String toJson(EmployeeModelData element){
+        Gson gson = new Gson();
+        return gson.toJson(element);
+    }
+
 
 
 }

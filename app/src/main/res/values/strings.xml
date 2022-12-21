@@ -8,4 +8,8 @@
     <string name="delete_existing_data">Delete Existing Data</string>
     <string name="view_data">View Data</string>
     <string name="my_employee">My Employee</string>
+    <string name="employee_details">Employee Details</string>
+    <string name="space" />
+    <string name="dot">.</string>
+    <string name="_1">1</string>
 </resources>
