@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dempapp1.R;
 
 public class EmployeeDetailAdapter extends RecyclerView.Adapter<EmployeeDetailAdapter.ViewHolder> {
-    private EmployeeModelData[] employeeModelData;
+    private final EmployeeModelData[] employeeModelData;
 
-    public EmployeeDetailAdapter(EmployeeModelData[] employeeModelData){
+    public EmployeeDetailAdapter(EmployeeModelData[] employeeModelData) {
         this.employeeModelData = employeeModelData;
     }
 
@@ -23,7 +23,7 @@ public class EmployeeDetailAdapter extends RecyclerView.Adapter<EmployeeDetailAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem = layoutInflater.inflate(R.layout.layout_employee_item,parent,false);
+        View listItem = layoutInflater.inflate(R.layout.layout_employee_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
@@ -31,8 +31,8 @@ public class EmployeeDetailAdapter extends RecyclerView.Adapter<EmployeeDetailAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final EmployeeModelData mEmployeeModelData = employeeModelData[position];
-        holder.textViewName.setText(employeeModelData[position].getEmployeeName());
         holder.textViewId.setText(employeeModelData[position].getEmployeeId());
+        holder.textViewName.setText(employeeModelData[position].getEmployeeName());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,14 +47,15 @@ public class EmployeeDetailAdapter extends RecyclerView.Adapter<EmployeeDetailAd
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        public AppCompatTextView textViewName;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public AppCompatTextView textViewId;
+        public AppCompatTextView textViewName;
         public ConstraintLayout constraintLayout;
-        public ViewHolder(View itemView){
+
+        public ViewHolder(View itemView) {
             super(itemView);
-            this.textViewName = (AppCompatTextView) itemView.findViewById(R.id.tvEmployeeName);
             this.textViewId = (AppCompatTextView) itemView.findViewById(R.id.tvEmployeeId);
+            this.textViewName = (AppCompatTextView) itemView.findViewById(R.id.tvEmployeeName);
             constraintLayout = (ConstraintLayout) itemView.findViewById(R.id.clParent);
         }
     }

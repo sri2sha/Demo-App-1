@@ -1,27 +1,32 @@
 package com.example.dempapp1.recyclerview;
 
 public class EmployeeModelData {
-    private String employeeName;
     private String employeeId;
+    private String employeeName;
 
-    public EmployeeModelData(String employeeName, String employeeId){
-        this.employeeName = employeeName;
+    public EmployeeModelData() {
+    }
+
+    public EmployeeModelData(String employeeId, String employeeName) {
         this.employeeId = employeeId;
+        this.employeeName = employeeName;
     }
 
-    public String getEmployeeName(){
-        return employeeName;
-    }
-
-    public String getEmployeeId(){
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeName(String employeeName){
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
     }
 
-    public void setEmployeeId(String employeeId){
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
+
+
 }

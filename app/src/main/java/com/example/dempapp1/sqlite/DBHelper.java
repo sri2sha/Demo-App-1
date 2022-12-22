@@ -7,6 +7,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.dempapp1.recyclerview.EmployeeModelData;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final int DB_VERSION = 1;
@@ -29,11 +34,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("drop Table if exists TABLE_NAME");
     }
 
-    public Boolean insertEmployeeData(String employeeName, String employeeId) {
+    public Boolean insertEmployeeData(String employeeId, String employeeName) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("employeeName", employeeName);
         contentValues.put("employeeId", employeeId);
+        contentValues.put("employeeName", employeeName);
         long result = db.insert(TABLE_NAME, null, contentValues);
         return result != -1;
     }
@@ -63,5 +68,26 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from TABLE_NAME",null);
         return cursor;
     }
+
+    public List<EmployeeModelData> getAllEmployee(){
+        List<EmployeeModelData> employeeModelData = new ArrayList<EmployeeModelData>();
+
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                EmployeeModelData employeeModelData1 = new EmployeeModelData();
+                employeeModelData1.setEmployeeId(cursor.getString(0));
+                employeeModelData1.setEmployeeName(cursor.getString(1));
+
+                employeeModelData.add(employeeModelData1);
+            }while (cursor.moveToNext());
+        }
+        return employeeModelData;
+    }
+
 
 }
