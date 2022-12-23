@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">Demp App 1</string>
-    <string name="username">UserName</string>
+    <string name="app_name">Demo App 1</string>
+    <string name="username">Employee Name</string>
     <string name="employeeId">Employee Id</string>
     <string name="save">Save</string>
+    <string name="insert_new_data">Insert New Data</string>
+    <string name="update">Update Data</string>
+    <string name="delete_existing_data">Delete Existing Data</string>
+    <string name="view_data">View Data</string>
+    <string name="my_employee">My Employee</string>
+    <string name="employee_details">Employee Details</string>
+    <string name="space" />
+    <string name="dot">.</string>
+    <string name="_1">1</string>
 </resources>
