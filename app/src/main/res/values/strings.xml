@@ -12,4 +12,20 @@
     <string name="space" />
     <string name="dot">.</string>
     <string name="_1">1</string>
+    <string name="mysql_with_recyclerview">MySQL with RecyclerView</string>
+    <string name="java_apps">Java Applications</string>
+    <string name="intent">Intent</string>
+    <string name="implicit_intent">Implicit Intent</string>
+    <string name="explicit_intent">Explicit Intent</string>
+    <string name="visit">Visit</string>
+    <string name="first_activity">First Activity</string>
+    <string name="second_activity">Second Activity</string>
+    <string name="call_second_activity">Call Second Activity</string>
+    <string name="call_first_activity">Call First Activity</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="next">Next</string>
+    <string name="next_page">Next Page</string>
+    <string name="service">Service</string>
+    <string name="enter_your_text_here">Enter your text here</string>
 </resources>

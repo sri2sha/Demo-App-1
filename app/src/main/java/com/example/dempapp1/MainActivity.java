@@ -8,12 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.dempapp1.recyclerview.EmployeeModelData;
+import com.example.dempapp1.recyclerview.RecyclerViewActivity;
 import com.example.dempapp1.sqlite.DBHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.gson.Gson;
 
 import java.util.Objects;
 

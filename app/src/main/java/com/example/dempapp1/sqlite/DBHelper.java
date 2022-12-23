@@ -82,7 +82,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 EmployeeModelData employeeModelData1 = new EmployeeModelData();
                 employeeModelData1.setEmployeeId(cursor.getString(0));
                 employeeModelData1.setEmployeeName(cursor.getString(1));
-
                 employeeModelData.add(employeeModelData1);
             }while (cursor.moveToNext());
         }

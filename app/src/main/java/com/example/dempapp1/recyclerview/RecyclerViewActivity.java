@@ -1,4 +1,4 @@
-package com.example.dempapp1;
+package com.example.dempapp1.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.dempapp1.R;
 import com.example.dempapp1.recyclerview.EmployeeDetailAdapter;
 import com.example.dempapp1.recyclerview.EmployeeModelData;
 import com.example.dempapp1.sqlite.DBHelper;
@@ -29,6 +30,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         DB = new DBHelper(this);
         List<EmployeeModelData> res = DB.getAllEmployee();
+
+
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvEmployees);
         EmployeeDetailAdapter employeeDetailAdapter = new EmployeeDetailAdapter(res.toArray(new EmployeeModelData[0]));
