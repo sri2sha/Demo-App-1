@@ -28,4 +28,7 @@
     <string name="next_page">Next Page</string>
     <string name="service">Service</string>
     <string name="enter_your_text_here">Enter your text here</string>
+    <string name="camera">Camera</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="test">Test</string>
 </resources>
