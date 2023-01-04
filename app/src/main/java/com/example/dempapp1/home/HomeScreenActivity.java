@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.dempapp1.R;
+import com.example.dempapp1.asyncTask.AsyncTaskActivity;
+import com.example.dempapp1.bmi.BMIActivity;
+import com.example.dempapp1.bmi.BMIMainActivity;
 import com.example.dempapp1.camera.CameraActivity;
 import com.example.dempapp1.intent.explicitIntent.IntentActivityFirst;
 import com.example.dempapp1.intent.implicitIntent.IntentActivity;
@@ -19,7 +22,7 @@ import java.util.Objects;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
-    MaterialButton btnMySQL, btnImplicit, btnExplicit,btnService,btnCamera,btnTest;
+    MaterialButton btnMySQL, btnImplicit, btnExplicit,btnService,btnCamera,btnTest,btnAsyncTask,btnBMI;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,6 +38,8 @@ public class HomeScreenActivity extends AppCompatActivity {
         btnService = findViewById(R.id.btnService);
         btnCamera = findViewById(R.id.btnCamera);
         btnTest = findViewById(R.id.btnTest);
+        btnAsyncTask = findViewById(R.id.btnMyAsynTask);
+        btnBMI = findViewById(R.id.btnBMI);
 
         btnMySQL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +78,22 @@ public class HomeScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAsyncTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AsyncTaskActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnBMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), BMIMainActivity.class);
                 startActivity(intent);
             }
         });
