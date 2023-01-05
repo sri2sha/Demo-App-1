@@ -53,6 +53,9 @@
     <string name="bmiTips">You are underweight So you may need to put on some weight.</string>
     <string name="todo">TODO</string>
     <string name="bmi_calculator">BMI Calculator</string>
+    <string name="services">Services</string>
+    <string name="broadcast_receiver">Broadcast Receiver</string>
+    <string name="turn_airplane_mode_on_and_off">Turn Airplane Mode ON and OFF</string>
     <string-array name="tips_array">
         <item>You are severely underweight. It is a sign that you\'re not eating enough or you may be ill.</item>
         <item>You are underweight So you may need to put on some weight. </item>

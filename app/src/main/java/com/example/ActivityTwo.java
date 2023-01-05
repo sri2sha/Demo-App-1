@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.dempapp1.R;
+import com.example.demoapp1.R;
 
 public class ActivityTwo extends AppCompatActivity {
 

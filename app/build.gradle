@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.dempapp1'
+    namespace 'com.example.demoapp1'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.dempapp1"
+        applicationId "com.example.demoapp1"
         minSdk 22
         targetSdk 33
         versionCode 1

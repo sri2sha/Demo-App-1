@@ -8,6 +8,16 @@
         android:layout_height="match_parent"
         tools:context=".service.ServiceActivity">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/services"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,7 +27,7 @@
             android:backgroundTint="@color/blue_700"
             android:id="@+id/btnStart"
             android:text="@string/start"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="70dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"

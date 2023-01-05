@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.demoapp1">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,6 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DempApp1"
         tools:targetApi="31">
+        <activity
+            android:name=".broadcastReceiver.BroadcastActivity"
+            android:exported="false">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".bmi.BMIMainActivity"
             android:exported="false">
@@ -137,13 +146,9 @@
         </activity>
 
         <service
-            android:name=".aidlServer.AIDLColorService"
+            android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="AIDLColorService" />
-            </intent-filter>
-        </service>
+            android:exported="true"></service>
     </application>
 
 </manifest>

@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.dempapp1.R;
+import com.example.demoapp1.R;
 import com.google.android.material.button.MaterialButton;
 
 public class ActivityOne extends AppCompatActivity {
